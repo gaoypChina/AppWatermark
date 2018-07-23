@@ -1,0 +1,13 @@
+#ifndef MRDStandardProject-Prefix
+#define MRDStandardProject-Prefix
+
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#import "CONSTS.h"
+
+#endif
+
+#endif
