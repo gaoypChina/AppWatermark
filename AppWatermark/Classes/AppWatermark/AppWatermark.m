@@ -5,7 +5,7 @@
 
 //注意，真机上水印比在虚拟机上显示的更显眼。
 //推荐值
-//#define WATERMARK_COLOR  [[UIColor redColor] colorWithAlphaComponent:0.05]
+#define WATERMARK_COLOR  [[UIColor redColor] colorWithAlphaComponent:0.05]
 //更显眼，只用于测试。
 #define WATERMARK_COLOR  [[UIColor redColor] colorWithAlphaComponent:0.5]
 
@@ -61,13 +61,20 @@ static UIView *watermarkView;
     CGFloat rotation = -M_PI_4;
     
     //一行只有一个水印
-    CGFloat w = [UIScreen mainScreen].bounds.size.width;
+    CGFloat w = 0;
+    {
+        CGFloat minW = image.size.width*M_SQRT2 + 20;
+        CGFloat oneThirdScreen = [UIScreen mainScreen].bounds.size.width/3.0;
+        w = fmax(minW,oneThirdScreen);
+    }
+    
+    //界面最多显示4行水印
     CGFloat h = 0;
     {
         CGFloat minH = image.size.width*M_SQRT2 + 20;
-        //界面最多显示4行水印
-        CGFloat quarterH = [UIScreen mainScreen].bounds.size.height/4.0;
-        h = fmax(minH,quarterH);
+        
+        CGFloat quarterScreen = [UIScreen mainScreen].bounds.size.height/4.0;
+        h = fmax(minH,quarterScreen);
     }
     
     CGRect destRect = CGRectMake(0, 0, w, h);

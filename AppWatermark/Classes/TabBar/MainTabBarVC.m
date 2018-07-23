@@ -68,7 +68,9 @@
         _firstAppear = NO;
 
         //应用增加水印
-        NSString *userName = @"我是水印";
+        NSString *userName = @"";
+//        userName = @"一个短的水印";
+        userName = @"我是一个特别长特别长特别长的水印";
         [AppWatermark addWatermark:userName];
     }
 }
