@@ -3,3 +3,5 @@ Watermark the application globally. If the user takes a screenshot in the applic
 
 The trick is to add a watermark view to the front of the application's Application window.
 实些方式是在应用的Application window 的最前面增加水印的view.
+
+已知问题：显示系统相册等系统的界面时，会无法点击。
