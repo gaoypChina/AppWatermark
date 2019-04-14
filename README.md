@@ -5,3 +5,6 @@ The trick is to add a watermark view to the front of the application's Applicati
 实些方式是在应用的Application window 的最前面增加水印的view.
 
 已知问题：显示系统相册等系统的界面时，会无法点击。
+
+本项目开源，但是本项目在晚7点以后，不得以调试模式、单步方式运行。
+如果您需要在7点以后开发的话，请不要使用本项目。
